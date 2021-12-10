@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body class="text-center" style="height:100vh;background-image: linear-gradient(
+    rgba(91, 91, 107, 0.5),
+    rgba(245, 245, 245, 0.966)
+  );">
+        <header class="p-3 bg-dark text-white">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center">
+        
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <use xlink:href="#bootstrap" />
+                        </svg>
+                    </a>
+        
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left:-10%;">
+                        <li><a href="/home" class="nav-link px-2 text-secondary">Home</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                    </ul>
+        
+                </div>
+            </div>
+        </header>
+    <main class="form-signin" style="width:30%;margin-top:5rem;margin-left:auto;margin-right:auto;">
+        <form action="/login" method="POST">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+            {{# if error }}
+                <div class="alert alert-danger" role="alert">
+                    {{ error}}
+                </div>
+            {{/if}}
+            <div class="form-floating">
+                <input type="text" class="form-control" id="email" name="email" placeholder="name@example.com">
+                <label for="email">Email:</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                <label for="password">Password</label>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <div class="form-floating">
+                <a href='/signup'>Click here to register</a>
+            </div>
+            <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
+        </form>
+    </main>
+</body>
+</html>
