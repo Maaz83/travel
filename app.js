@@ -1,9 +1,12 @@
 const express = require("express");
+var HTTP_PORT = process.env.PORT || 8080;
 
 var routes = require("./routes/appRouter");
 
+
 const app = express();
 const path = require("path");
+
 var hbs = require("express-handlebars");
 
 var expressValidator = require("express-validator");
@@ -36,6 +39,6 @@ app.use("/", routes);
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.listen(3333, () => {
-  console.log("Application listening on port 3333!");
+app.listen(HTTP_PORT, () => {
+  console.log("Application listening on port 8080!");
 });
